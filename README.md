@@ -1,74 +1,16 @@
-# Data analysis
-- Document here the project: Web_Scraping
-- Description: Project Description
-- Data Source:
-- Type of analysis:
 
-Please document the project the better you can.
+# Data Sourcing - PART 1
 
-# Startup the project
+Web Scraping and API are important data sourcing skills.
 
-The initial setup.
-
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
-
-Unittest test:
-```bash
-make clean install test
-```
-
-Check for Web_Scraping in gitlab.com/{group}.
-If your project is not set please add it:
-
-- Create a new project on `gitlab.com/{group}/Web_Scraping`
-- Then populate it:
+I use request.get() to scrap stock market information and use pandas to output csv.
 
 ```bash
-##   e.g. if group is "{group}" and project_name is "Web_Scraping"
-git remote add origin git@github.com:{group}/Web_Scraping.git
-git push -u origin master
-git push -u origin --tags
+
+api_data = requests.get(url).json()
+df = pd.DataFrame(api_data)
+df.to_csv()
+
 ```
 
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-Web_Scraping-run
-```
-
-# Install
-
-Go to `https://github.com/{group}/Web_Scraping` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/Web_Scraping.git
-cd Web_Scraping
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-Web_Scraping-run
-```
+In the tests folder, I also build up a function to test my results.
