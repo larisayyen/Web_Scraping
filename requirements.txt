@@ -16,7 +16,8 @@ pytest
 yapf
 
 # API
-
+requests
+urllib
 
 # utilities
 six>=1.14
